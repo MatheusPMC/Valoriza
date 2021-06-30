@@ -1,0 +1,14 @@
+micronaut:
+  application:
+    name: valoriza
+endpoints:
+  health:
+    enabled: true
+cassandra:
+  default:
+    basic:
+      contact-points:
+        - localhost:9042
+      session-keyspace: User
+      load-balancing-policy:
+        local-datacenter: datacenter1
