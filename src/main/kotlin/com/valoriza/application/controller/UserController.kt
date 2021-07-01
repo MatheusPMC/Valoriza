@@ -1,22 +1,20 @@
 package com.valoriza.application.controller
 
-import com.valoriza.application.dto.UserDto
-import com.valoriza.core.mapper.UserConverter
-import com.valoriza.core.port.UserServicePort
-import io.micronaut.http.HttpResponse
-import io.micronaut.http.HttpStatus
-import io.micronaut.http.annotation.Body
-import io.micronaut.http.annotation.Controller
-import io.micronaut.http.annotation.Post
-import java.util.*
 
-@Controller("users")
-class UserController(private val userService: UserServicePort) {
-    @Post
-    fun create(@Body userDto: UserDto): HttpResponse<Any> {
-        userDto.id = UUID.randomUUID()
-        val userDto = userService.createUser(UserConverter.userDtoToUser(userDto))
-        return HttpResponse.created(HttpStatus.CREATED).body(userDto)
+import io.micronaut.http.MediaType
+import io.micronaut.http.annotation.*
+import io.micronaut.security.annotation.Secured
+import java.security.Principal
+
+
+@Secured("isAuthenticated()") // <1>
+@Controller("/")
+class UserController() {
+
+    @Produces(MediaType.TEXT_PLAIN) // <3>
+    @Get("/user")  // <4>
+    fun index(principal: Principal): String {  // <5>
+        return principal.name
     }
 
 }

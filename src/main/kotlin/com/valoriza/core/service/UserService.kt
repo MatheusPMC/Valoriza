@@ -1,5 +1,5 @@
 package com.valoriza.core.service
-
+/*
 import com.valoriza.application.dto.UserDto
 import com.valoriza.core.domain.User
 import com.valoriza.core.mapper.UserConverter
@@ -13,3 +13,5 @@ class UserService(private val userRepository: UserRepositoryPort): UserServicePo
         UserConverter.userToUserDto(userRepository.createUser(
             UserConverter.userToUserEntity(user)))
 }
+
+ */

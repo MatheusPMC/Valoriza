@@ -31,6 +31,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
+    compileOnly("org.graalvm.nativeimage:svm")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut.security:micronaut-security-jwt")
+    kapt("io.micronaut.security:micronaut-security-annotations")
+    kapt("io.micronaut.data:micronaut-data-processor")
 
     implementation ("com.datastax.oss:java-driver-core:4.11.0")
     implementation("io.micronaut.cassandra:micronaut-cassandra")

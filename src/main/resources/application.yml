@@ -1,14 +1,15 @@
 micronaut:
   application:
     name: valoriza
-endpoints:
-  health:
-    enabled: true
-cassandra:
-  default:
-    basic:
-      contact-points:
-        - localhost:9042
-      session-keyspace: User
-      load-balancing-policy:
-        local-datacenter: datacenter1
+---
+#tag::security[]
+micronaut:
+  security:
+    authentication: bearer # <1>
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1hdGhldXMiLCJpYXQiOjE1MTYyMzkwMjJ9.1tOLcMHR3DSgrf-SfF8ZvvzH6R-RK7BX0WjGRYjjFYk' # <2>
+#end::security[]

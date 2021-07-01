@@ -4,7 +4,7 @@ import com.valoriza.application.dto.UserDto
 import com.valoriza.core.domain.User
 import com.valoriza.infra.entity.UserEntity
 import javax.inject.Singleton
-
+/*
 @Singleton
 class UserConverter {
     companion object {
@@ -25,3 +25,6 @@ class UserConverter {
                 user.password,user.created_at,user.updated_at)
     }
 }
+
+
+ */

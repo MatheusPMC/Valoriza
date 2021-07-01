@@ -1,5 +1,5 @@
 package com.valoriza.infra.repository.impl
-
+/*
 import com.datastax.oss.driver.api.core.CqlSession
 import com.datastax.oss.driver.api.core.cql.BoundStatement
 import com.datastax.oss.driver.api.core.cql.PreparedStatement
@@ -28,3 +28,5 @@ class UserEntityRepositoryImpl(private val session: CqlSession): UserEntityRepos
         return userEntity
     }
 }
+
+ */
